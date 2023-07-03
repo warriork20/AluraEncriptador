@@ -17,66 +17,78 @@ La letra "u" es convertida para "ufat"
 
 function btnEncriptar(){
     const textoEncriptado = encriptar(texArea.value);
-    mensaje.value = textoEncriptado;
-    texArea.value = "";
-    mensaje.style.backgroundImage = "none";
+    if(textoEncriptado!=""){
+        mensaje.value = textoEncriptado;
+        texArea.value = "";
+        mensaje.style.backgroundBlendMode = "lighten";
+    } else {
+        alert("Ingrese texto")
+    }
 
 }
 
 function btnDesencriptar(){
     const textoDesencriptado = desencriptar(texArea.value);
-    mensaje.value = textoDesencriptado;
-    texArea.value = "";
-    mensaje.style.backgroundImage = "none";
-
+    if(textoDesencriptado!=""){
+        mensaje.value = textoDesencriptado;
+        texArea.value = "";
+        mensaje.style.backgroundBlendMode = "lighten";
+    } else {
+        alert("Ingrese texto")
+    }
 }
 
 
 function encriptar(stringEncriptada){
-    let matrizCodigo = [["e","enter"], 
+    if(stringEncriptada!=""){
+        let matrizCodigo = [["e","enter"], 
                         ["i", "imes"], 
                         ["a", "ai"], 
                         ["o", "ober"],
                         ["u", "ufat"]];
-    stringEncriptada = stringEncriptada.toLowerCase();
+        stringEncriptada = stringEncriptada.toLowerCase();
 
-    for(let i = 0; i < matrizCodigo.length; i++ ){
-        if(stringEncriptada.includes(matrizCodigo[i][0])){
+        for(let i = 0; i < matrizCodigo.length; i++ ){
+            if(stringEncriptada.includes(matrizCodigo[i][0])){
             stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
+            }
         }
+        return stringEncriptada;
+    } else {
+        return "";
     }
-    return stringEncriptada;
+    
 }
 
 function desencriptar(stringDesencriptada){
-    let matrizCodigo = [["e","enter"], 
-                        ["i", "imes"], 
-                        ["a", "ai"], 
-                        ["o", "ober"],
-                        ["u", "ufat"]];
-    stringDesencriptada = stringDesencriptada.toLowerCase();
+    if(stringDesencriptada!=""){
+        let matrizCodigo = [["e","enter"], 
+        ["i", "imes"], 
+        ["a", "ai"], 
+        ["o", "ober"],
+        ["u", "ufat"]];
+        stringDesencriptada = stringDesencriptada.toLowerCase();
 
-    for(let i = 0; i < matrizCodigo.length; i++ ){
-        if(stringDesencriptada.includes(matrizCodigo[i][1])){
+        for(let i = 0; i < matrizCodigo.length; i++ ){
+            if(stringDesencriptada.includes(matrizCodigo[i][1])){
             stringDesencriptada = stringDesencriptada.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0]);
+            }
         }
+        return stringDesencriptada;
+    } else {
+        return "";
     }
-    return stringDesencriptada;
+
 }
 
 btn_copiar.addEventListener("click", copiar = () => {
     var contenido = document.querySelector(".mensaje");
     navigator.clipboard.writeText(contenido.value);
+    mensaje.style.backgroundBlendMode = "normal";
+    mensaje.value="";
+    alert("Texto copiado en portapapeles");
     console.log("copiado");
 })
-
-
-function copiar (){
-    var contenido = document.querySelector(".mensaje");
-    navigator.clipboard.write(contenido.value);
-    console.log("copiado2");
-}
-
 
 btn_encriptar.onclick = btnEncriptar;
 

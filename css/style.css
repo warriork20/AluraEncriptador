@@ -1,0 +1,264 @@
+:root{
+    --color-azul: #0A3871;
+    --color-celeste: #F3F5FC;
+    --color-gris: #D8DFE8;
+}
+
+*{
+    background: var(--color-celeste);
+    font-size: 32px;
+    font-family: 'Inter', san-serif;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+
+.header{
+    width: 90%;
+    margin: auto;
+}
+
+.logo{
+/*     padding-top: 20px;
+    margin-left: 20px;
+    width: 40px; */
+    margin-top: 40px;
+}
+
+/*Main*/
+/*
+main{
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 80px;
+
+}
+*/
+.main{
+    
+    width: 85%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: 65% 30%;
+    min-height: calc(100vh - 91px - 72px);
+    align-items: end;
+
+}
+
+.left{
+    width: 90%;
+    height: 670px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.text-area {
+    border: none;
+    color: var(--color-azul);
+    margin-top: 90px;
+    outline: none;
+    resize: none;
+    /* text-transform: lowercase; */
+}
+
+.informacion_1 {
+    display: inline-flex;
+    width: 18px;
+    position: relative;
+}
+
+
+.informacion {
+    color: #495057;
+    font-size: 18px;
+    display: inline-flex;
+    margin-left: 2px;
+    opacity: 0.800000011920929;
+    font-style: italic;
+}
+
+
+::placeholder { color: var(--color-azul); 
+}
+.text-area:focus {
+        outline: none;
+}
+
+.right{
+    
+    background-color: white;
+    height: calc(100% + 40px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border: none;
+    color: var(--color-azul);
+    
+
+}
+.ajuste{
+    justify-content: space-between;
+}
+
+.mensaje {
+    width: 25%;
+    background: white;
+    background-image: url("/assets/img/Munheco.png");
+    background-blend-mode: normal;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: center;
+    border: none;
+    /*
+    margin-left: 98px;
+    margin-top: 20px;
+    */
+    padding-top: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    height: 60%;
+    position: fixed;
+    resize: none;
+    
+}
+
+.mensaje:focus{
+    outline:none;
+}
+
+
+.sinmensaje{
+    background-color: transparent;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.7;
+
+}
+.sinmensaje p, h6{
+    background: none;
+    font-weight: bold;
+    font-size: 22px;
+    display: none;
+}
+
+
+.botones{
+    display: flex;
+    margin-top: 18px;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.btn-encriptar,
+.btn-desencriptar,
+.btn-copiar {
+    border: 1px solid var(--color-azul);
+    border-radius: 24px;
+    cursor: pointer;
+    height: 67px;
+    width: 40%;
+    min-width: 200px;
+    max-width: 328px;
+    align-items: flex-start;
+
+    color: white;
+    background-color: var(--color-azul);
+}
+
+.btn-desencriptar {
+    background: var(--color-gris);
+    color: var(--color-azul);
+}
+
+.btn-copiar{
+    background-color: transparent;
+    color: var(--color-azul);
+    width: 110%;
+}
+/*
+.btn-copiar {
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    color: #0A3871;
+    cursor: pointer;
+    height: 67px;
+    margin-left: 108px;
+    margin-top: 588px;
+    position: absolute;
+    width: 336px;
+    align-items: flex-start;
+
+
+}
+*/
+
+@media screen and (max-width: 770px){
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: auto;
+        margin: auto 40px;
+    }
+
+    .right{
+        margin-top: 40px;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .botones{
+        justify-content: center;
+    }
+    .btn-encriptar, .btn-desencriptar{
+        max-width: none;
+        width: 80%;
+        align-items: center;
+    }
+
+    .mensaje{
+        background-image: none;
+        width: 80%;
+        height: 80px;
+        position: absolute;
+    }
+
+    .btn-copiar {
+        align-items: end;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .main{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: auto;
+        margin: auto 40px;
+    }
+    .btn-encriptar, .btn-desencriptar{
+        max-width: none;
+        width: 100%;
+        align-items: center;
+    }
+    .right{
+        margin-top: 40px;
+        height: 100%;
+        justify-content: space-between;
+    }
+    .mensaje{
+        padding: 0;
+        margin: auto 0;
+        background-image: "none";
+        width: 150%;
+        height: 100px;
+        position: absolute;
+    }
+}

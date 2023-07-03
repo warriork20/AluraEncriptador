@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap" rel="stylesheet">
@@ -12,30 +13,40 @@
 </head>
 <body>
     <header>
-        <img src="assets/img/Logo-Alura.png" alt="logo de Alura" class="logo">
+        <div class="header">
+            <img src="./assets/img/Logo-Alura.png" alt="logo de Alura" class="logo">
+        </div>
     </header>
     <main>
-        <section>
-            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese su texto aquí"></textarea>
-            <div>
-                <img class = "informacion_1" src="assets/img/bi_exclamation-circle-fill.svg" alt="!">
-                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
-            </div>
-            <div class="botonos">
-                <button class="btn-encriptar">Encriptar</button>
-                <button class="btn-desencriptar">Desencriptar</button>
-            </div>
-        </section>
-        <section>
-            <textarea class="mensaje" cols="20" rows="12"></textarea>
-            <div>
-                <button class="btn-copiar">Copiar</button>
-            </div>
-        </section>
+        <div class="main">
+            <section class="left">
+                <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese su texto aquí"></textarea>
+                <div class="left__footer">
+                    <img class = "informacion_1" src="./assets/img/bi_exclamation-circle-fill.svg" alt="!">
+                    <span class="informacion">Solo letras minúsculas y sin acentos</span>
+                    <div class="botones">
+                        <button class="btn-encriptar">Encriptar</button>
+                        <button class="btn-desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+
+            </section>
+            <section class="right ajuste">
+                <textarea class="mensaje" cols="20" rows="10"></textarea>
+                <div class="sinmensaje">
+                    <p>Ningún mensaje fue encontrado</p>
+                    <h6>Ingrese el texto que desees encriptar o desencriptar</h6>
+                </div>
+
+                <button class="btn-copiar oculto">Copiar</button>
+               
+            </section>
+        </div>
+        
     </main>
     <footer>
         
     </footer>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
