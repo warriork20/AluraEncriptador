@@ -111,7 +111,7 @@ main{
 .mensaje {
     width: 25%;
     background: white;
-    background-image: url("/assets/img/Munheco.png");
+    background-image: url("./assets/img/Munheco.png");
     background-blend-mode: normal;
     background-repeat: no-repeat;
     background-position-y: center;
