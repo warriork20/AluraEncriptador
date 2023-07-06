@@ -5,13 +5,17 @@
 }
 
 *{
-    background: var(--color-celeste);
+    /*
+    background: var(--color-celeste);*/
     font-size: 32px;
     font-family: 'Inter', san-serif;
     font-weight: 400;
     line-height: 120%;
 }
 
+body{
+    background-color: var(--color-celeste);
+}
 
 .header{
     width: 90%;
@@ -57,6 +61,7 @@ main{
 .text-area {
     border: none;
     color: var(--color-azul);
+    background-color: var(--color-celeste);
     margin-top: 90px;
     outline: none;
     resize: none;
@@ -111,7 +116,7 @@ main{
 .mensaje {
     width: 25%;
     background: white;
-    background-image: url("./assets/img/Munheco.png");
+    background-image: url("/assets/img/Munheco.png");
     background-blend-mode: normal;
     background-repeat: no-repeat;
     background-position-y: center;
@@ -125,8 +130,10 @@ main{
     padding-left: 20px;
     box-sizing: border-box;
     height: 60%;
-    position: fixed;
+    position: absolute;
     resize: none;
+    align-items: center;
+
     
 }
 
@@ -136,18 +143,30 @@ main{
 
 
 .sinmensaje{
-    background-color: transparent;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0.7;
+    background-color: none;
+    align-items: flex-end;
+    padding-top: 600px;
+}
+
+.sinmensaje p{
+    color: #343A40;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
 
 }
-.sinmensaje p, h6{
-    background: none;
-    font-weight: bold;
-    font-size: 22px;
-    display: none;
+
+.sinmensaje h6{
+    color: #495057;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
 }
 
 
@@ -174,6 +193,7 @@ main{
     background-color: var(--color-azul);
 }
 
+
 .btn-desencriptar {
     background: var(--color-gris);
     color: var(--color-azul);
@@ -184,6 +204,7 @@ main{
     color: var(--color-azul);
     width: 110%;
 }
+
 /*
 .btn-copiar {
     border: 1px solid #0A3871;
@@ -200,7 +221,8 @@ main{
 
 }
 */
-
+/*Media query
+*/
 @media screen and (max-width: 770px){
     .main{
         grid-template-columns: 1fr;
@@ -230,6 +252,7 @@ main{
         height: 80px;
         position: absolute;
     }
+
 
     .btn-copiar {
         align-items: end;

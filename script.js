@@ -1,5 +1,7 @@
 const texArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
+const defecto1 = document.querySelector(".sinmensaje p");
+const defecto2 = document.querySelector(".sinmensaje h6");
 const btn_encriptar = document.querySelector(".btn-encriptar");
 const btn_desencriptar = document.querySelector(".btn-desencriptar");
 const btn_copiar = document.querySelector(".btn-copiar");
@@ -21,6 +23,8 @@ function btnEncriptar(){
         mensaje.value = textoEncriptado;
         texArea.value = "";
         mensaje.style.backgroundBlendMode = "lighten";
+        defecto1.style.display = "none";
+        defecto2.style.display = "none";
     } else {
         alert("Ingrese texto")
     }
@@ -33,6 +37,8 @@ function btnDesencriptar(){
         mensaje.value = textoDesencriptado;
         texArea.value = "";
         mensaje.style.backgroundBlendMode = "lighten";
+        defecto1.style.display = "none";
+        defecto2.style.display = "none";
     } else {
         alert("Ingrese texto")
     }
@@ -86,6 +92,8 @@ btn_copiar.addEventListener("click", copiar = () => {
     navigator.clipboard.writeText(contenido.value);
     mensaje.style.backgroundBlendMode = "normal";
     mensaje.value="";
+    defecto1.style.display = "block";
+    defecto2.style.display = "block";
     alert("Texto copiado en portapapeles");
     console.log("copiado");
 })
